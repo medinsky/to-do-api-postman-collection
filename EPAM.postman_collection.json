@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "5a432961-7ddd-4f65-9570-83db935b21a2",
+		"name": "EPAM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "todo",
+			"description": null,
+			"item": [
+				{
+					"name": "todo-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/todo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todo"
+							]
+						},
+						"description": "returns Array<ToDo>"
+					},
+					"response": []
+				},
+				{
+					"name": "todo item by item id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/todo/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todo",
+								"2"
+							]
+						},
+						"description": "returns toDo item by id Object:ToDo"
+					},
+					"response": []
+				},
+				{
+					"name": "todo item description by item id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/todo/2/description",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todo",
+								"2",
+								"description"
+							]
+						},
+						"description": "returns description for toDo item by id {description: string}"
+					},
+					"response": []
+				},
+				{
+					"name": "create todo item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "finishDate",
+									"value": "2018-07-07T06:51:39.099Z",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "caption",
+									"value": "My unique caption",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "My awesome description",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/todo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todo"
+							]
+						},
+						"description": "returns new toDoItem Object:ToDo"
+					},
+					"response": []
+				},
+				{
+					"name": "remove todo item by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/todo/10",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todo",
+								"10"
+							]
+						},
+						"description": "returns {id: itemId}"
+					},
+					"response": []
+				},
+				{
+					"name": "update todo item by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "DONE",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "finishDate",
+									"value": "2018-07-30T07:00:00.000Z",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "caption",
+									"value": "Updated caption",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Updated description",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/todo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todo"
+							]
+						},
+						"description": "returns toDo Object: ToDo"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
